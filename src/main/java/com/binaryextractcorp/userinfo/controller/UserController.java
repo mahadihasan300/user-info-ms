@@ -19,4 +19,9 @@ public class UserController {
         UserDTO savedUser = userService.addUser(userDTO);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
+
+    @GetMapping("/fetchUserById/{userId}")
+    public ResponseEntity<UserDTO> fetchUserDetailsById(@PathVariable Integer userId){
+        return userService.fetchUserDetailsById(userId);
+    }
 }
